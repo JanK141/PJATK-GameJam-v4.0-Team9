@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class EnemyFollowing : MonoBehaviour
 {
-    [SerializeField] private Transform player;
+    [SerializeField] public Transform player;
     [SerializeField] private Transform waypoint1;
     [SerializeField] private Transform waypoint2;
     [SerializeField] private float walkingSpeed = 15;
     [SerializeField] private float jumpCooldown = 4f;
 
 
-    public bool isFocusedOnPlayer = false;
+    [HideInInspector] public bool isFocusedOnPlayer = false;
 
     private Rigidbody rb;
     private Enemy enemy;

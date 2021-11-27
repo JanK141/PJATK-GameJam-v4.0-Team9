@@ -6,42 +6,33 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField]
+    private GameData data;
+
     public GameObject Instructions;
     public GameObject Credits;
     public Dropdown Difficulty;
 
-    // Start is called before the first frame update
     void Start()
     {
         gameObject.SetActive(false);
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        data.playerHP = 5;
     }
 
     public void DifficultySelected(Dropdown diff)
     {
-        int HP; 
-
         if(diff.value == 0)
         {
-            HP = 5;
+            data.playerHP = 5;
         }
         else if(diff.value == 1)
         {
-            HP = 3;
+            data.playerHP = 3;
         }
         else
         {
-            HP = 1;
+            data.playerHP = 1;
         }
-        
-        //tutaj trzeba ustawic HP gracza na te wartosc
-        //GameData.PlayerHP = HP;
     }
 
     public void PlayTheGame()

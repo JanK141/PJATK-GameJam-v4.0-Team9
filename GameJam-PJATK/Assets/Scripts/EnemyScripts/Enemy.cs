@@ -28,15 +28,6 @@ public class Enemy : MonoBehaviour
         rb.freezeRotation = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        /*if (canMove)
-        {
-            Vector3 directionToPlayer = (player.position - transform.position).normalized;
-            rb.AddForce(directionToPlayer*1000*Time.deltaTime);
-        }*/
-    }
 
     public bool IsGrounded()
     {
@@ -67,9 +58,35 @@ public class Enemy : MonoBehaviour
             canMove = false;
             Invoke(nameof(UnStun), stunDuration);
         }
+
+        /*if (other.gameObject.CompareTag("DeathZone"))
+        {
+            Destroy(gameObject);
+        }*/
+
+        if ((other.gameObject.layer == 7 && gameObject.layer == 6) ||
+            (gameObject.layer == 7 && other.gameObject.layer == 6))
+        {
+            Death();
+            other.gameObject.GetComponent<Enemy>().Death();
+        }
     }
 
     void UnStun() => canMove = true;
+
+    public void SetAsProjectile()
+    {
+        gameObject.layer = 7;
+        transform.GetChild(1).GetComponent<Collider>().enabled = false;
+        GetComponent<EnemyFollowing>().isFocusedOnPlayer = false;
+        Invoke(nameof(UnProjectile), 3f);
+    }
+
+    void UnProjectile()
+    {
+        gameObject.layer = 6;
+        transform.GetChild(1).GetComponent<Collider>().enabled = true;
+    }
 
 
 }

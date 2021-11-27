@@ -10,4 +10,9 @@ public class EnemyWaypointPosFix : MonoBehaviour
     {
         transform.position = new Vector3(transform.position.x, enemy.position.y, transform.position.z);
     }
+
+    void Update()
+    {
+        if(enemy==null) Destroy(gameObject);
+    }
 }
