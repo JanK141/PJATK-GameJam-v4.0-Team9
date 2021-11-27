@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
 
     public bool IsGrounded()
     {
-        return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
+        return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.05f);
     }
 
     public void Jump() => rb.velocity = new Vector3(0, Mathf.Sqrt(-2f * jumpHeight * Physics.gravity.y), 0);

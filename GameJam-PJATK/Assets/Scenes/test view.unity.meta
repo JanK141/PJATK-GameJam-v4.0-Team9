@@ -1,7 +1,14 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:GameJam-PJATK/Assets/Scenes/test view.unity.meta
 guid: 9fc0d4010bbf28b4594072e72b8655ab
 DefaultImporter:
   externalObjects: {}
+=======
+guid: 7ecd78e157c77594cb7389eefc2cabb7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+>>>>>>> 1b5679fd5ab4536799c233feb5752635c5d03b59:GameJam-PJATK/Assets/Animations/Txt animations/PressAnyKey pulsing.anim.meta
   userData: 
   assetBundleName: 
   assetBundleVariant: 
