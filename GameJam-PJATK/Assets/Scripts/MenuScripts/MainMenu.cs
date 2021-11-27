@@ -16,6 +16,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         gameObject.SetActive(false);
+        data = new GameData();
         data.playerHP = 5;
     }
 
