@@ -13,7 +13,7 @@ public class GameData
 
     public GameData()
     {
-
+        playerHP = 5;
     }
 
     public bool PlayerTakesDamage()

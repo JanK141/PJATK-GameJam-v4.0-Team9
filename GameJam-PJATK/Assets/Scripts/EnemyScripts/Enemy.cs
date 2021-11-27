@@ -50,7 +50,7 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
 
-            //TODO Obra¿enia dla gracza
+            GameEventSystem.Instance.PlayerGetDamage();
 
             float xPushForce = collisionHorizontalPushForce;
             if (other.transform.position.x > transform.position.x) xPushForce *= -1;
