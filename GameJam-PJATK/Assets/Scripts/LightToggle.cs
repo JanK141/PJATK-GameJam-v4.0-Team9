@@ -1,21 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class LightToggle : MonoBehaviour
 {
 
-    [SerializeField] private List<Transform> tra;
+    [SerializeField] private List<Light> lights;
     [SerializeField] private bool toggle;
 
     // Start is called before the first frame update
     void Start()
     {
         toggle = false;
-        foreach (Transform tr in transform)
-        {
-            tra.Add(tr);
-        }
+        //foreach (Transform tr in transform)
+        //{
+        //    tra.Add(tr);
+        //}
+
+        lights = GetComponentsInChildren<Light>().ToList();
     }
 
     // Update is called once per frame
@@ -23,16 +26,16 @@ public class LightToggle : MonoBehaviour
     {
         if (toggle)
         {
-            foreach(Transform tr in tra)
+            foreach(Light tr in lights)
             {
-                tr.GetComponent<Light>().enabled = true;
+                tr.enabled = true;
             }
         }
         else
         {
-            foreach (Transform tr in tra)
+            foreach (Light tr in lights)
             {
-                tr.GetComponent<Light>().enabled = false;
+                tr.enabled = false;
             }
         }
     }
