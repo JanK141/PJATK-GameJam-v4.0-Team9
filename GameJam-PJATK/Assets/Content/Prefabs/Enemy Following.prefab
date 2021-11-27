@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4162223670284159991}
   - component: {fileID: 4162223670284159989}
   - component: {fileID: 4162223670284159988}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FocusTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 4162223671163690639}
   - component: {fileID: 4162223671163690638}
   - component: {fileID: 4162223671163690633}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy Following
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 4162223671221701068}
   - component: {fileID: 4162223671221701042}
   - component: {fileID: 4162223671221701069}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: KillTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
