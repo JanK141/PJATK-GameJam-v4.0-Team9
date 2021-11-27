@@ -1,0 +1,12 @@
+https://youtu.be/ulFc6p3hQzQ
+
+Window > Package Editor > Settings right top corner > advanced project settings >
+enable preview packages > download
+
+w edytorze 
+
+Create > 2D > tilemap > zmien w tilemap Cell Swizzle na ZXY > right bottom corner > open tile map
+
+W tilemap 
+
+na dole zmien default brsh na gameobject brush, dodaj obiekt, gotowe
