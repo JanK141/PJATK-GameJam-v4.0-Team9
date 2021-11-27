@@ -17,23 +17,23 @@ public class UIUpdate : MonoBehaviour
 
     void HPUpdate(GameData data)
     {
-        if (data.playerHP==4)
+        if (data.playerHP < 5 && HP5!=null)
         {
             Destroy(HP5);
         }
-        else if (data.playerHP == 3)
+        else if (data.playerHP < 4 && HP4 != null)
         {
             Destroy(HP4);
         }
-        else if(data.playerHP == 2)
+        else if(data.playerHP < 3 && HP3 != null)
         {
             Destroy(HP3);
         }
-        else if (data.playerHP == 1)
+        else if (data.playerHP < 2 && HP2 != null)
         {
             Destroy(HP2);
         }
-        else if (data.playerHP == 0)
+        else if (data.playerHP < 1 && HP1 != null)
         {
             Destroy(HP1);
         }
