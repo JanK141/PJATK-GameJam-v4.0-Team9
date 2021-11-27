@@ -16,7 +16,6 @@ public class Enemy : MonoBehaviour
     private Collider coll;
     private MeshRenderer mr;
     private float distToGround;
-    [SerializeField] private Transform player;
 
     [HideInInspector] public bool canMove = true;
     void Start()
@@ -57,6 +56,7 @@ public class Enemy : MonoBehaviour
             rb.AddForce(xPushForce, collisionVerticalPushForce, 0, ForceMode.Impulse);
             canMove = false;
             Invoke(nameof(UnStun), stunDuration);
+            GetComponent<ParticleSystem>().Play();
         }
 
         /*if (other.gameObject.CompareTag("DeathZone"))
