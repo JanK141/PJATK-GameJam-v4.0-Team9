@@ -4,7 +4,7 @@
 o 
 
 # material
-mtllib untitled.mtl
+mtllib ground.mtl
 usemtl palette
 
 # normals
