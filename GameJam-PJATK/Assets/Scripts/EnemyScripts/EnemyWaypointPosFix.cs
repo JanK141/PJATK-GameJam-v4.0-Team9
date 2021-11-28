@@ -8,7 +8,7 @@ public class EnemyWaypointPosFix : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.position = new Vector3(transform.position.x, enemy.position.y, transform.position.z);
+        if(enemy!=null)transform.position = new Vector3(transform.position.x, enemy.position.y, transform.position.z);
     }
 
     void Update()
