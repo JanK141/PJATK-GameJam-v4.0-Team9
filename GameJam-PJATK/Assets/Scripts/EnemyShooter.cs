@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyShooter : MonoBehaviour
 {
     [SerializeField] public GameObject enemyPrefab;
-    [SerializeField] public float cooldown = 3;
+    [SerializeField] public float cooldown = 2;
 
     private bool canShoot = true;
     void Update()
