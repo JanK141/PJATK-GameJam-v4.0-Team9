@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     float movementSpeed, jumpForce;
 
     Rigidbody rb;
+    private Animator anim;
+    private Collider collider;
     float movement = 0f;
     bool isGrounded = true;
     bool jump = false;
@@ -21,13 +23,16 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake()
     {
+        collider = GetComponent<Collider>();
         rb = GetComponent<Rigidbody>();
+        anim = transform.GetChild(0).GetComponent<Animator>();
         normalJumpForce = jumpForce;
         startingZposition = transform.position.z;
     }
 
     void Update()
     {
+        anim.SetFloat("velocity", rb.velocity.magnitude);
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
         movement = x * movementSpeed;
@@ -48,6 +53,8 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        transform.LookAt(new Vector3(transform.position.x + rb.velocity.normalized.x * 10, transform.position.y, transform.position.z));
+
         ChangeLane(z);
     }
 
@@ -64,8 +71,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
+        anim.SetTrigger("jump");
         rb.AddForce(jumpForce * Vector3.up, ForceMode.Impulse);
-        isGrounded = false;
+        //isGrounded = false;
     }
 
     void ChangeLane(float z)
@@ -99,6 +107,16 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = true;
             secondJumpUsed = false;
+            anim.SetBool("Grounded", true);
+        }
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+            anim.SetBool("Grounded", false);
         }
     }
 }
