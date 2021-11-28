@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        transform.LookAt(new Vector3(transform.position.x + rb.velocity.normalized.x * 10, transform.position.y, transform.position.z));
+        transform.LookAt(new Vector3(transform.position.x + rb.velocity.normalized.x *10, transform.position.y, transform.position.z));
 
         ChangeLane(z);
     }
