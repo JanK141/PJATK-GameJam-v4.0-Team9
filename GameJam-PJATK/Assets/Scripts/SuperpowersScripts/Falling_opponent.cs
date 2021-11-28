@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Falling_opponent : MonoBehaviour
 {
-    public Rigidbody ridigbody;
+    private Rigidbody ridigbody;
     void Start()
     {
         GameEventSystem.Instance.OnMapFlip += fall;
 
     }
 
-    public void fall()
+    void fall()
     {
         ridigbody = GetComponent<Rigidbody>(); ;
         ridigbody.useGravity = false;
