@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Camera;
+
 
 public class Camera_180 : MonoBehaviour
 {
-    public Cameramachine
+    
     void Start()
     {
         
