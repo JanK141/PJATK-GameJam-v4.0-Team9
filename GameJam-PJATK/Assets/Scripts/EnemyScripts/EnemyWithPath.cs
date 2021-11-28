@@ -20,8 +20,20 @@ public class EnemyWithPath : MonoBehaviour
         enemy = GetComponent<Enemy>();
         rb = GetComponent<Rigidbody>();
         transform.position = waypoint1.position;
+
+        GameEventSystem.Instance.OnDoubleSpeedGrounded += GetNominalSpeed;
+        GameEventSystem.Instance.OnDoubleSpeedAirborne += GetDoubleSpeed;
     }
-    
+
+    public void GetDoubleSpeed(GameData data)
+    {
+        walkingSpeed = 2 * data.enemyPatrolSpeed;
+    }
+
+    public void GetNominalSpeed(GameData data)
+    {
+        walkingSpeed = data.enemyPatrolSpeed;
+    }
 
     void FixedUpdate()
     {
