@@ -8,38 +8,26 @@ public class LanternScript : MonoBehaviour
     [SerializeField] private List<Light> lights;
     [SerializeField] private bool toggle;
 
+    //LINE 30 EXCEPTION
     // Start is called before the first frame update
     void Start()
     {
         toggle = false;
        
         lights = GetComponentsInChildren<Light>().ToList();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //if (toggle)
-        //{
-        //    foreach (Light tr in lights)
-        //    {
-        //        tr.enabled = true;
-        //    }
-        //}
-        //else
-        //{
-        //    foreach (Light tr in lights)
-        //    {
-        //        tr.enabled = false;
-        //    }
-        //}
+        foreach (Light lt in lights)
+        {
+            lt.enabled = false;
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
-            GameEventSystem.Instance.CheckpointReached();
+            //GameEventSystem.Instance.CheckpointReached();  //KULA DAJE NULLA
 
             this.toggle = true;
 
