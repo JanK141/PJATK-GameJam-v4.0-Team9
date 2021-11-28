@@ -25,8 +25,6 @@ public class GameData : MonoBehaviour
             playerHP = 5;
         }
 
-        playerHP = 5; //commentout
-
         playerSpeed = 7f;
         enemyPatrolSpeed = 15f;
         

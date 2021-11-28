@@ -35,7 +35,7 @@ public class GameEventSystem : MonoBehaviour
     }
 
     //start
-    public event Action<GameData> OnNewGame; //invoked the moment a new game is started
+    public event Action OnNewGame; //invoked the moment a new game is started
 
     //damage
     public event Action<GameData> OnPlayerGetDamage; //invoked on taking damage
@@ -53,10 +53,9 @@ public class GameEventSystem : MonoBehaviour
     public event Action OnDoubleJumpAcquire;
 
     public event Action OnMapFlip;
-    public void NewGame(GameData data)
+    public void NewGame()
     {
-        Time.timeScale = 1;
-        OnNewGame?.Invoke(data);
+        OnNewGame?.Invoke();
     }
 
     public void DoubleSpeedSuperPowerAcquired() //this method should be called by the superpower orb on collision
@@ -96,7 +95,6 @@ public class GameEventSystem : MonoBehaviour
         if (DED)
         {
             OnPlayerDead?.Invoke();
-            //Time.timeScale = 0;
         }
     }
 
@@ -114,7 +112,6 @@ public class GameEventSystem : MonoBehaviour
     public void GameWon()
     {
         OnGameWon?.Invoke();
-        //Time.timeScale = 0;
     }
 
     public void MapFlip()
