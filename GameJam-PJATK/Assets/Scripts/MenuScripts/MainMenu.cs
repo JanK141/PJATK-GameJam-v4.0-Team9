@@ -17,7 +17,6 @@ public class MainMenu : MonoBehaviour
     {
         gameObject.SetActive(false);
         data = new GameData();
-        data.playerHP = 5;
     }
 
     public void DifficultySelected(Dropdown diff)
@@ -36,9 +35,11 @@ public class MainMenu : MonoBehaviour
         }
     }
 
+
     public void PlayTheGame()
     {
         //SceneManager.LoadScene("...");
+        GameEventSystem.Instance.NewGame(data);
     }
 
     public void GoToInstructions()
