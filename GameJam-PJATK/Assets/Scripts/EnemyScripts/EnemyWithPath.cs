@@ -23,7 +23,6 @@ public class EnemyWithPath : MonoBehaviour
 
         GameEventSystem.Instance.OnDoubleSpeedGrounded += GetNominalSpeed;
         GameEventSystem.Instance.OnDoubleSpeedAirborne += GetDoubleSpeed;
-<<<<<<< HEAD
     }
 
     public void GetDoubleSpeed(GameData data)
@@ -35,19 +34,6 @@ public class EnemyWithPath : MonoBehaviour
     {
         walkingSpeed = data.enemyPatrolSpeed;
     }
-=======
-    }
-    
-    public void GetDoubleSpeed(GameData data)
-    {
-        walkingSpeed = 2 * data.enemyPatrolSpeed;
-    }
-
-    public void GetNominalSpeed(GameData data)
-    {
-        walkingSpeed = data.enemyPatrolSpeed;
-    }
->>>>>>> 594270b174d1a9a786b8293407dfe2f0fa3f6342
 
     void FixedUpdate()
     {
