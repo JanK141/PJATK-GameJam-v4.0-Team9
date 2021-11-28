@@ -42,7 +42,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayTheGame()
     {
-        //SceneManager.LoadScene("...");
+        SceneManager.LoadScene("FajnyLevel");
         GameEventSystem.Instance.NewGame(data);
     }
 
