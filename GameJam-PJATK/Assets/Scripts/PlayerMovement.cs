@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
                 if (doubleJumpPower)
                     jumpForce = -normalJumpForce;
                 else
-                    jumpForce = normalJumpForce / 2;
+                    jumpForce = normalJumpForce;
 
                 jump = true;
                 secondJumpUsed = true;
@@ -107,6 +107,7 @@ public class PlayerMovement : MonoBehaviour
     void Jump()
     {
         anim.SetTrigger("jump");
+        rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
         rb.AddForce(jumpForce * Vector3.up, ForceMode.Impulse);
         //isGrounded = false;
     }
