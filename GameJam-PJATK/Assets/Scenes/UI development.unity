@@ -688,6 +688,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameWon canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 647880572651213151, guid: 656edd58a723c744b9f1e235a45bb48f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 647880572651213216, guid: 656edd58a723c744b9f1e235a45bb48f, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -836,6 +840,10 @@ PrefabInstance:
     - target: {fileID: 2453765604006535232, guid: 23f0be24322f3744a817f78a2e8cecae, type: 3}
       propertyPath: m_Name
       value: GameOver canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2453765604006535232, guid: 23f0be24322f3744a817f78a2e8cecae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2453765604006535244, guid: 23f0be24322f3744a817f78a2e8cecae, type: 3}
       propertyPath: m_Pivot.x
