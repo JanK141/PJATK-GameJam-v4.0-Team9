@@ -97,7 +97,7 @@ public class GameEventSystem : MonoBehaviour
     {
         if (!data.PlayerTakesDamage()) //if the player survives
         {
-            OnPlayerFellButSurvived?.Invoke();
+            OnPlayerFellButSurvived?.Invoke(data);
         }
         else
         {
