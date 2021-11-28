@@ -129,6 +129,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 7
   jumpForce: 14
+  ignoreMe:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1001 &242442493566241428
 PrefabInstance:
   m_ObjectHideFlags: 0

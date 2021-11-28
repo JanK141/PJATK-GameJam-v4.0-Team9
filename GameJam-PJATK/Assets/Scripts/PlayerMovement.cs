@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     float movementSpeed, jumpForce;
 
+    [SerializeField] private LayerMask ignoreMe;
+
     Rigidbody rb;
     private Animator anim;
     private Collider collider;
@@ -93,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        isGrounded = Physics.Raycast(transform.position, -Vector3.up, collider.bounds.extents.y + 0.1f);
+        isGrounded = Physics.Raycast(transform.position, -Vector3.up, collider.bounds.extents.y + 0.1f, ~ignoreMe);
         anim.SetBool("Grounded", isGrounded);
         rb.velocity = new Vector3(movement, rb.velocity.y, 0);
 
