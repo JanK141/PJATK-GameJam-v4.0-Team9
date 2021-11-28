@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.velocity = new Vector3(movement, rb.velocity.y);
+        rb.velocity = new Vector3(movement, rb.velocity.y, 0);
 
         if (jump)
         {

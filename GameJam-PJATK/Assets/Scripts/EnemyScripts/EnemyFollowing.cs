@@ -38,9 +38,9 @@ public class EnemyFollowing : MonoBehaviour
             ProcessPathWalking();
         }
 
-        if (isFocusedOnPlayer)
+        if (isFocusedOnPlayer && enemy.canMove)
         {
-            if (transform.position.z == player.position.z)
+            if (Mathf.Abs(transform.position.z - player.position.z)<0.1f)
             {
                 Vector3 distanceVecor = player.position - transform.position;
                 Vector3 direction = distanceVecor.normalized;

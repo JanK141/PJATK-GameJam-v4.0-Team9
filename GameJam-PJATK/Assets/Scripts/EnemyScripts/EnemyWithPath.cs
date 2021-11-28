@@ -21,7 +21,7 @@ public class EnemyWithPath : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         transform.position = waypoint1.position;
     }
-    
+
 
     void FixedUpdate()
     {
