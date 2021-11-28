@@ -12,7 +12,7 @@ public class ActivateFallingPower : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("XDD");       
-            Destroy(gameObject);
+            Destroy(this);
             camera1.transform.Rotate(0, 0, 180);
             GameEventSystem.Instance.MapFlip();
 
