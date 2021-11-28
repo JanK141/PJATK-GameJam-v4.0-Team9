@@ -51,6 +51,7 @@ public class GameEventSystem : MonoBehaviour
     public event Action<GameData> OnDoubleSpeedAirborne;
     public event Action OnDoubleSpeedAcquire;
 
+    public event Action OnMapFlip;
     public void NewGame(GameData data)
     {
         Time.timeScale = 1;
@@ -110,5 +111,10 @@ public class GameEventSystem : MonoBehaviour
     {
         OnGameWon?.Invoke();
         //Time.timeScale = 0;
+    }
+
+    public void MapFlip()
+    {
+        OnMapFlip?.Invoke();
     }
 }
