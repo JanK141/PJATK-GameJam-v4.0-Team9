@@ -1820,7 +1820,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 450982738}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.93145216
+  m_Size: 0.9900051
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3748,7 +3748,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -3761,7 +3761,10 @@ MonoBehaviour:
     m_LineSpacing: 1.4
   m_Text: "Jan Krajewski - concepts, physics, SSTNTBD*\nMarcin Wr\xF3blewski - concepts,
     UI, SSTNTBD*\nBart\u0142omiej Kawa - concepts, physics, SSTNTBD*\nJakub Wilczak
-    - concepts, graphics, SSTNTBD*\nJakub Gawry\u015B - concepts, tech artist, SSTNTBD*"
+    - concepts, graphics, SSTNTBD*\nJakub Gawry\u015B - concepts, tech artist, SSTNTBD*\n\nMusic
+    by Kevin MacLeod (incompetech.com)\r\nLicensed under Creative Commons: By Attribution
+    4.0 License\r\nhttp://creativecommons.org/licenses/by/4.0/\n- \"Beauty Flow\"
+    (menu)\n- \"Delightful D\" (gameplay)\n"
 --- !u!222 &1608619820
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4694,7 +4697,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: -0.000026102462}
+  m_AnchoredPosition: {x: 0.00079345703, y: -0.000026102462}
   m_SizeDelta: {x: 583.582, y: 581.257}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1947920734
