@@ -13,18 +13,13 @@ public class GameData : MonoBehaviour
 
     bool doubleSpeedPower;
 
-    void Start()
-    {
-        GameEventSystem.Instance.OnDoubleSpeedAcquired += DoubleSpeedAcquired;        
-    }
-
     public GameData()
     {
         playerHP = 5;
         doubleSpeedPower = false;
     }
 
-    public void DoubleSpeedAcquired(GameData data)
+    public void DoubleSpeedAcquired()
     {
         doubleSpeedPower = true;
     }
