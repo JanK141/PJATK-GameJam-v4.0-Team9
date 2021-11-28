@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] [Tooltip("Vertical push force in collision with player")] private float collisionVerticalPushForce = 10f;
     [SerializeField] [Tooltip("For how long enemy is stunned after collision with player")] private float stunDuration = 3f;
     [SerializeField] private float jumpHeight = 4f;
+    [SerializeField] private Animator anim;
 
     private Rigidbody rb;
     private Collider coll;
@@ -27,13 +28,23 @@ public class Enemy : MonoBehaviour
         rb.freezeRotation = true;
     }
 
+    void Update()
+    {
+        anim.SetFloat("velocity", rb.velocity.magnitude);
+        anim.SetBool("Grounded", IsGrounded());
+    }
+
 
     public bool IsGrounded()
     {
         return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.05f);
     }
 
-    public void Jump() => rb.velocity = new Vector3(0, Mathf.Sqrt(-2f * jumpHeight * Physics.gravity.y), 0);
+    public void Jump()
+    {
+        anim.SetTrigger("jump");
+        rb.velocity = new Vector3(0, Mathf.Sqrt(-2f * jumpHeight * Physics.gravity.y), 0);
+    }
 
     public void Death()
     {
@@ -57,6 +68,7 @@ public class Enemy : MonoBehaviour
             canMove = false;
             Invoke(nameof(UnStun), stunDuration);
             GetComponent<ParticleSystem>().Play();
+            anim.SetTrigger("hit");
         }
 
         /*if (other.gameObject.CompareTag("DeathZone"))

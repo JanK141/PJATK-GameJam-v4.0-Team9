@@ -25,13 +25,21 @@ public class GameEventSystem : MonoBehaviour
         data = new GameData();
     }
 
+    //start
     public event Action<GameData> OnNewGame; //invoked the moment a new game is started
 
+    //damage
     public event Action<GameData> OnPlayerGetDamage; //invoked on taking damage
-    public event Action OnPlayerDead; //invoke on HP reaching 0 in any way
     public event Action OnPlayerFellButSurvived;  //PlayerMovement needs to subscribe a method to bring Player back to last checkpoint on this Event
     public event Action<GameData> OnCheckpointReached;
+
+    //game end
+    public event Action OnPlayerDead; //invoke on HP reaching 0 in any way
     public event Action OnGameWon; //invoked when the player reaches the finish
+
+    //superpowers
+    public event Action<GameData> OnDoubleSpeedGrounded;
+    public event Action<GameData> OnDoubleSpeedAirborne;
 
     public void NewGame(GameData data)
     {
@@ -39,7 +47,23 @@ public class GameEventSystem : MonoBehaviour
         OnNewGame?.Invoke(data);
     }
 
-    public void CheckpointReached()
+    public void DoubleSpeedSuperPowerAcquired() //this method should be called by the superpower orb on collision
+    {
+        data.DoubleSpeedAcquired();
+    }
+
+    public void DoubleSpeedGrounded()
+    {
+        OnDoubleSpeedGrounded?.Invoke(data);
+    }
+
+    public void DoubleSpeedAirborne()
+    {
+        OnDoubleSpeedAirborne?.Invoke(data);
+    }
+
+
+    public void CheckpointReached() //this method should be called on collision with the checkpoint
     {
         data.ReachCheckpoint();
     }

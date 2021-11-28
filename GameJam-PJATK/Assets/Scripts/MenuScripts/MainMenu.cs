@@ -16,7 +16,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         gameObject.SetActive(false);
-        data = new GameData();
+        //data = new GameData();
     }
 
     public void DifficultySelected(Dropdown diff)
