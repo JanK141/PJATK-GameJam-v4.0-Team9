@@ -14,7 +14,7 @@ public class EnemyShooter : MonoBehaviour
         {
             canShoot = false;
             Invoke(nameof(ResetCooldown), cooldown);
-            GameObject enemyprojectile = Instantiate(enemyPrefab,transform.position + transform.forward, Quaternion.identity);
+            GameObject enemyprojectile = Instantiate(enemyPrefab,transform.position + transform.forward*2, Quaternion.identity);
             enemyprojectile.GetComponent<Enemy>().SetAsProjectile();
             enemyprojectile.GetComponent<Rigidbody>().AddForce((transform.forward+transform.up)*5, ForceMode.Impulse);
             enemyprojectile.GetComponent<EnemyFollowing>().player = transform;
