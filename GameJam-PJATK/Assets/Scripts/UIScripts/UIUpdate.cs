@@ -10,9 +10,44 @@ public class UIUpdate : MonoBehaviour
     public GameObject HP4;
     public GameObject HP5;
 
+    public GameObject gameOverCanvas;
+    public GameObject gameWonCanvas;
+
     void Start()
     {
         GameEventSystem.Instance.OnPlayerGetDamage += HPUpdate;
+        GameEventSystem.Instance.OnNewGame += NewHP;
+
+        GameEventSystem.Instance.OnPlayerDead += GameOver;
+        GameEventSystem.Instance.OnGameWon += GameWon;
+    }
+
+    void NewHP(GameData data)
+    {
+        if (HP1==null)
+        {
+            Instantiate(HP1);
+        }
+
+        if (HP2==null && data.playerHP>1)
+        {
+            Instantiate(HP2);
+        }
+
+        if (HP2 == null && data.playerHP > 2)
+        {
+            Instantiate(HP3);
+        }
+
+        if (HP2 == null && data.playerHP > 3)
+        {
+            Instantiate(HP4);
+        }
+
+        if (HP2 == null && data.playerHP > 4)
+        {
+            Instantiate(HP5);
+        }
     }
 
     void HPUpdate(GameData data)
@@ -37,5 +72,17 @@ public class UIUpdate : MonoBehaviour
         {
             Destroy(HP1);
         }
+    }
+
+    public void GameOver()
+    {
+        gameObject.SetActive(false);
+        gameOverCanvas.SetActive(true);
+    }
+
+    public void GameWon()
+    {
+        gameObject.SetActive(false);
+        gameWonCanvas.SetActive(true);
     }
 }
