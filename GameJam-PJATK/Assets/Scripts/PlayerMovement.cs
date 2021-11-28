@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     bool doubleSpeedPower = false;
 
 
-    void Awake()
+    void Start()
     {
         collider = GetComponent<Collider>();
         rb = GetComponent<Rigidbody>();
@@ -38,6 +38,11 @@ public class PlayerMovement : MonoBehaviour
         GameEventSystem.Instance.OnDoubleSpeedAirborne += GetNominalSpeed;
 
 
+    }
+
+    private void OnDisable()
+    {
+        ;
     }
 
     public void AcquireDoubleSpeed()

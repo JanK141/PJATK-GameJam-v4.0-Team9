@@ -66,7 +66,6 @@ public class GameEventSystem : MonoBehaviour
     public void DoubleSpeedGrounded()
     {
         OnDoubleSpeedGrounded?.Invoke(data);
-
     }
 
     public void DoubleSpeedAirborne()
