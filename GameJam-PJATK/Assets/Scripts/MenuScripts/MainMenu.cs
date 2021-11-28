@@ -13,25 +13,29 @@ public class MainMenu : MonoBehaviour
     public GameObject Credits;
     public Dropdown Difficulty;
 
+    public GameEventSystem sys;
+
     void Start()
     {
         gameObject.SetActive(false);
-        //data = new GameData();
     }
 
     public void DifficultySelected(Dropdown diff)
     {
         if(diff.value == 0)
         {
-            data.playerHP = 5;
+            PlayerPrefs.SetInt("HP", 5);
+            //GameEventSystem.Instance.SetHP(5);
         }
         else if(diff.value == 1)
         {
-            data.playerHP = 3;
+            PlayerPrefs.SetInt("HP", 3);
+            //GameEventSystem.Instance.SetHP(3);
         }
         else
         {
-            data.playerHP = 1;
+            PlayerPrefs.SetInt("HP", 1);
+            //GameEventSystem.Instance.SetHP(1);
         }
     }
 

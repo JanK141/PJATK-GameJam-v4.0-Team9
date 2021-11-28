@@ -1414,9 +1414,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddc0ff6be2fc17945b53095791434b99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}
   Instructions: {fileID: 1857989618}
   Credits: {fileID: 384287748}
   Difficulty: {fileID: 4240611}
+  sys: {fileID: 0}
 --- !u!1 &531753456
 GameObject:
   m_ObjectHideFlags: 0
@@ -1756,7 +1758,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 450982738}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.99999696
+  m_Size: 0.9999422
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3697,7 +3699,7 @@ MonoBehaviour:
     m_LineSpacing: 1.4
   m_Text: "Jan Krajewski - concepts, physics, SSTNTBD*\nMarcin Wr\xF3blewski - concepts,
     UI, SSTNTBD*\nBart\u0142omiej Kawa - concepts, physics, SSTNTBD*\nJakub Wilczak
-    - concepts, graphics, SSTNTBD*\nJakub Gawry\u015B - concepts, graphics, SSTNTBD*"
+    - concepts, graphics, SSTNTBD*\nJakub Gawry\u015B - concepts, tech artist, SSTNTBD*"
 --- !u!222 &1608619820
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4626,6 +4628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UI_canvas: {fileID: 0}
+  data: {fileID: 0}
 --- !u!4 &1929504026
 Transform:
   m_ObjectHideFlags: 0

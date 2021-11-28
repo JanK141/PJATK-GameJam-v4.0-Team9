@@ -7,12 +7,15 @@ public class GameEventSystem : MonoBehaviour
 {
     public static GameEventSystem Instance;
     public GameObject UI_canvas;
+    public GameObject player;
     
     [SerializeField]
     private GameData data;
 
     private void Awake()
     {
+        //DontDestroyOnLoad(gameObject);
+
         if (Instance == null)
         {
             Instance = this;
@@ -20,9 +23,15 @@ public class GameEventSystem : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            //Destroy(this); jesli nie dziala
         }
 
         data = new GameData();
+    }
+
+    public void SetHP(int x)
+    {
+        data.playerHP = x;
     }
 
     //start
@@ -65,7 +74,7 @@ public class GameEventSystem : MonoBehaviour
 
     public void CheckpointReached() //this method should be called on collision with the checkpoint
     {
-        data.ReachCheckpoint();
+        data.ReachCheckpoint(player.transform.position);
     }
 
     //this gets called whenever a player takes damage

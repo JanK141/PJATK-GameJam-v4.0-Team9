@@ -15,7 +15,15 @@ public class GameData : MonoBehaviour
 
     public GameData()
     {
-        playerHP = 5;
+        if (PlayerPrefs.HasKey("HP"))
+        {
+            playerHP = PlayerPrefs.GetInt("HP");
+        }
+        else
+        {
+            playerHP = 5;
+        }
+        
         doubleSpeedPower = false;
     }
 
@@ -24,9 +32,9 @@ public class GameData : MonoBehaviour
         doubleSpeedPower = true;
     }
 
-    public void ReachCheckpoint()
+    public void ReachCheckpoint(Vector3 position)
     {
-        lastCheckpoint = Player.transform.position;
+        lastCheckpoint = position;
     }
 
     public bool PlayerTakesDamage()
