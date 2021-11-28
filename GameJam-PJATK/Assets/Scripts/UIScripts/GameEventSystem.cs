@@ -39,7 +39,7 @@ public class GameEventSystem : MonoBehaviour
 
     //damage
     public event Action<GameData> OnPlayerGetDamage; //invoked on taking damage
-    public event Action OnPlayerFellButSurvived;  //PlayerMovement needs to subscribe a method to bring Player back to last checkpoint on this Event
+    public event Action<GameData> OnPlayerFellButSurvived;  //PlayerMovement needs to subscribe a method to bring Player back to last checkpoint on this Event
     public event Action<GameData> OnCheckpointReached;
 
     //game end

@@ -37,7 +37,13 @@ public class PlayerMovement : MonoBehaviour
         GameEventSystem.Instance.OnDoubleSpeedGrounded += GetDoubleSpeed;
         GameEventSystem.Instance.OnDoubleSpeedAirborne += GetNominalSpeed;
 
+        GameEventSystem.Instance.CheckpointReached();
+        GameEventSystem.Instance.OnPlayerFellButSurvived += BackToCheckpoint;
+    }
 
+    public void BackToCheckpoint(GameData data)
+    {
+        gameObject.transform.position = data.lastCheckpoint;
     }
 
     private void OnDisable()
