@@ -38,7 +38,7 @@ public class GameEventSystem : MonoBehaviour
     public event Action OnGameWon; //invoked when the player reaches the finish
 
     //superpowers
-    public event Action<GameData> OnDoubleSpeedAcquired;
+    //public event Action<GameData> OnDoubleSpeedAcquired;  //remnant - not needed
 
     public void NewGame(GameData data)
     {
@@ -48,7 +48,8 @@ public class GameEventSystem : MonoBehaviour
 
     public void DoubleSpeedSuperPowerAcquired() //this method should be called by the superpower orb on collision
     {
-        OnDoubleSpeedAcquired?.Invoke(data);
+        data.DoubleSpeedAcquired();
+        //OnDoubleSpeedAcquired?.Invoke(data);
     }
 
 
