@@ -6,12 +6,12 @@ public class GameData : MonoBehaviour
 {
     public int playerHP;
     public float playerSpeed;
-    public int enemyPatrolSpeed;
+    public float enemyPatrolSpeed;
     public int enemyChaseSpeed;
     public Vector3 lastCheckpoint;
     public GameObject Player;
 
-    bool doubleSpeedPower;
+    public bool doubleSpeedPower;
 
     public GameData()
     {
@@ -23,6 +23,9 @@ public class GameData : MonoBehaviour
         {
             playerHP = 5;
         }
+
+        playerSpeed = 7f;
+        enemyPatrolSpeed = 15f;
         
         doubleSpeedPower = false;
     }

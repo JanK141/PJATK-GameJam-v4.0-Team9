@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     float laneWidth = 1f;
     int currentLane = 0;
 
+    bool doubleSpeedPower = false;
+
 
     void Awake()
     {
@@ -30,8 +32,17 @@ public class PlayerMovement : MonoBehaviour
         normalJumpForce = jumpForce;
         startingZposition = transform.position.z;
 
+        GameEventSystem.Instance.OnDoubleSpeedAcquire += AcquireDoubleSpeed;
+
         GameEventSystem.Instance.OnDoubleSpeedGrounded += GetDoubleSpeed;
         GameEventSystem.Instance.OnDoubleSpeedAirborne += GetNominalSpeed;
+
+
+    }
+
+    public void AcquireDoubleSpeed()
+    {
+        doubleSpeedPower = true;
     }
 
     void Update()
@@ -113,7 +124,11 @@ public class PlayerMovement : MonoBehaviour
             secondJumpUsed = false;
             anim.SetBool("Grounded", true);
 
-            GameEventSystem.Instance.DoubleSpeedGrounded();
+            if (doubleSpeedPower)
+            {
+                GameEventSystem.Instance.DoubleSpeedGrounded();
+            }
+            
         }
     }
 
@@ -124,7 +139,10 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = false;
             anim.SetBool("Grounded", false);
 
-            GameEventSystem.Instance.DoubleSpeedAirborne();
+            if (doubleSpeedPower)
+            {
+                GameEventSystem.Instance.DoubleSpeedAirborne();
+            }
         }
     }
 

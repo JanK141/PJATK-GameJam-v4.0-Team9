@@ -49,6 +49,7 @@ public class GameEventSystem : MonoBehaviour
     //superpowers
     public event Action<GameData> OnDoubleSpeedGrounded;
     public event Action<GameData> OnDoubleSpeedAirborne;
+    public event Action OnDoubleSpeedAcquire;
 
     public void NewGame(GameData data)
     {
@@ -58,17 +59,25 @@ public class GameEventSystem : MonoBehaviour
 
     public void DoubleSpeedSuperPowerAcquired() //this method should be called by the superpower orb on collision
     {
+        OnDoubleSpeedAcquire?.Invoke();
         data.DoubleSpeedAcquired();
     }
 
     public void DoubleSpeedGrounded()
     {
-        OnDoubleSpeedGrounded?.Invoke(data);
+        if (data.doubleSpeedPower)
+        {
+            OnDoubleSpeedGrounded?.Invoke(data);
+        }
+        
     }
 
     public void DoubleSpeedAirborne()
     {
-        OnDoubleSpeedAirborne?.Invoke(data);
+        if (data.doubleSpeedPower)
+        {
+            OnDoubleSpeedAirborne?.Invoke(data);
+        }
     }
 
 
