@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Camera;
 
 public class Camera_180 : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Cameramachine
     void Start()
     {
         
