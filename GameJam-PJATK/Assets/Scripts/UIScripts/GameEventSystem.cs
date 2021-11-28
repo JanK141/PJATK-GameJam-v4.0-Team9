@@ -30,13 +30,18 @@ public class GameEventSystem : MonoBehaviour
     public event Action<GameData> OnPlayerGetDamage; //invoked on taking damage
     public event Action OnPlayerDead; //invoke on HP reaching 0 in any way
     public event Action OnPlayerFellButSurvived;  //PlayerMovement needs to subscribe a method to bring Player back to last checkpoint on this Event
-
+    public event Action<GameData> OnCheckpointReached;
     public event Action OnGameWon; //invoked when the player reaches the finish
 
     public void NewGame(GameData data)
     {
         Time.timeScale = 1;
         OnNewGame?.Invoke(data);
+    }
+
+    public void CheckpointReached()
+    {
+        data.ReachCheckpoint();
     }
 
     //this gets called whenever a player takes damage
