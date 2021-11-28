@@ -84,6 +84,8 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    
+
     void UnStun() => canMove = true;
 
     public void SetAsProjectile()

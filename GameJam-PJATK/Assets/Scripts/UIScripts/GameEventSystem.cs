@@ -83,6 +83,7 @@ public class GameEventSystem : MonoBehaviour
 
     public void CheckpointReached() //this method should be called on collision with the checkpoint
     {
+        //Debug.Log("checkpoint saved");
         data.ReachCheckpoint(player.transform.position);
     }
 
@@ -102,13 +103,10 @@ public class GameEventSystem : MonoBehaviour
     //this gets called, when a player falls down a hole
     public void PlayerFell()
     {
-        if (!data.PlayerTakesDamage()) //if the player survives
+        PlayerGetDamage();
+        if (data.playerHP>0) //if the player survives (damage already dealt)
         {
             OnPlayerFellButSurvived?.Invoke(data);
-        }
-        else
-        {
-            OnPlayerDead?.Invoke();
         }
     }
 

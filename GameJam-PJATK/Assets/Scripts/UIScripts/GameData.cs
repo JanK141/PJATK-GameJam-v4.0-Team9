@@ -25,6 +25,8 @@ public class GameData : MonoBehaviour
             playerHP = 5;
         }
 
+        playerHP = 5; //commentout
+
         playerSpeed = 7f;
         enemyPatrolSpeed = 15f;
         
@@ -45,6 +47,7 @@ public class GameData : MonoBehaviour
     public void ReachCheckpoint(Vector3 position)
     {
         lastCheckpoint = position;
+        //Debug.Log("checkpoint position saved in data");
     }
 
     public bool PlayerTakesDamage()
