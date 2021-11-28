@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1810875332064649347}
   m_Layer: 0
   m_Name: blackCube
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 861310614880569942}
   m_Layer: 0
   m_Name: default
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
