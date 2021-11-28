@@ -55,6 +55,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone_body Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 282141bdd3afb684193ab62839194a22, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 282141bdd3afb684193ab62839194a22, type: 3}
 --- !u!1 &7020578910792516065 stripped
