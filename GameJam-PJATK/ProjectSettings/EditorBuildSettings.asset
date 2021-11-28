@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FajnyLevel.unity
     guid: 312aad6223b687744ad5c182bfb5a4b9
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: 87f000d14590e8049b65d3ee49d25a8f
   m_configObjects: {}

@@ -65,19 +65,23 @@ public class UIUpdate : MonoBehaviour
         {
             Destroy(HP5);
         }
-        else if (data.playerHP < 4 && HP4 != null)
+        
+        if (data.playerHP < 4 && HP4 != null)
         {
             Destroy(HP4);
         }
-        else if(data.playerHP < 3 && HP3 != null)
+        
+        if(data.playerHP < 3 && HP3 != null)
         {
             Destroy(HP3);
         }
-        else if (data.playerHP < 2 && HP2 != null)
+        
+        if (data.playerHP < 2 && HP2 != null)
         {
             Destroy(HP2);
         }
-        else if (data.playerHP < 1 && HP1 != null)
+        
+        if (data.playerHP < 1 && HP1 != null)
         {
             Destroy(HP1);
         }

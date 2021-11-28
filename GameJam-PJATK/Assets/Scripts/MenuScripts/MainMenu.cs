@@ -45,7 +45,7 @@ public class MainMenu : MonoBehaviour
     public void PlayTheGame()
     {
         
-        SceneManager.LoadScene("FajnyLevel");
+        SceneManager.LoadScene("Level1");
         
     }
 

@@ -20,4 +20,10 @@ public class EndOfGame : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void GoToNextLevel()
+    {
+        gameObject.SetActive(false);
+        SceneManager.LoadScene("FajnyLevel");
+    }
 }
