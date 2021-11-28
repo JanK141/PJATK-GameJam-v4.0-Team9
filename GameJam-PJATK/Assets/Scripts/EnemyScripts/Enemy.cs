@@ -71,10 +71,10 @@ public class Enemy : MonoBehaviour
             anim.SetTrigger("hit");
         }
 
-        /*if (other.gameObject.CompareTag("DeathZone"))
+        if (other.gameObject.CompareTag("DeathZone"))
         {
             Destroy(gameObject);
-        }*/
+        }
 
         if ((other.gameObject.layer == 7 && gameObject.layer == 6) ||
             (gameObject.layer == 7 && other.gameObject.layer == 6))
