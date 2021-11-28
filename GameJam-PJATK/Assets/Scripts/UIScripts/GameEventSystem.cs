@@ -50,6 +50,7 @@ public class GameEventSystem : MonoBehaviour
     public event Action<GameData> OnDoubleSpeedGrounded;
     public event Action<GameData> OnDoubleSpeedAirborne;
     public event Action OnDoubleSpeedAcquire;
+    public event Action OnDoubleJumpAcquire;
 
     public event Action OnMapFlip;
     public void NewGame(GameData data)
@@ -64,6 +65,12 @@ public class GameEventSystem : MonoBehaviour
         data.DoubleSpeedAcquired();
     }
 
+    public void DoubleJumpSuperPowerAcquired() //this method should be called by the superpower orb on collision
+    {
+        OnDoubleJumpAcquire?.Invoke();
+        data.DoubleJumpAcquired();
+    }
+
     public void DoubleSpeedGrounded()
     {
         OnDoubleSpeedGrounded?.Invoke(data);
@@ -73,7 +80,6 @@ public class GameEventSystem : MonoBehaviour
     {
         OnDoubleSpeedAirborne?.Invoke(data);
     }
-
 
     public void CheckpointReached() //this method should be called on collision with the checkpoint
     {

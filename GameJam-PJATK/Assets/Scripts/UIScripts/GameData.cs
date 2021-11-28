@@ -12,6 +12,7 @@ public class GameData : MonoBehaviour
     public GameObject Player;
 
     public bool doubleSpeedPower;
+    public bool doubleJumpPower;
 
     public GameData()
     {
@@ -28,11 +29,17 @@ public class GameData : MonoBehaviour
         enemyPatrolSpeed = 15f;
         
         doubleSpeedPower = false;
+        doubleJumpPower = false;
     }
 
     public void DoubleSpeedAcquired()
     {
         doubleSpeedPower = true;
+    }
+
+    public void DoubleJumpAcquired()
+    {
+        doubleJumpPower = true;
     }
 
     public void ReachCheckpoint(Vector3 position)

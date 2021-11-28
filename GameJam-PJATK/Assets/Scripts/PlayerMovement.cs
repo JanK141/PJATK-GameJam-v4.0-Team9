@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     int currentLane = 0;
 
     bool doubleSpeedPower = false;
-
+    bool doubleJumpPower = false;
 
     void Start()
     {
@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
         startingZposition = transform.position.z;
 
         GameEventSystem.Instance.OnDoubleSpeedAcquire += AcquireDoubleSpeed;
+        GameEventSystem.Instance.OnDoubleJumpAcquire += AcquireDoubleJump;
 
         GameEventSystem.Instance.OnDoubleSpeedGrounded += GetDoubleSpeed;
         GameEventSystem.Instance.OnDoubleSpeedAirborne += GetNominalSpeed;
@@ -46,14 +47,14 @@ public class PlayerMovement : MonoBehaviour
         gameObject.transform.position = data.lastCheckpoint;
     }
 
-    private void OnDisable()
-    {
-        ;
-    }
-
     public void AcquireDoubleSpeed()
     {
         doubleSpeedPower = true;
+    }
+
+    public void AcquireDoubleJump()
+    {
+        doubleJumpPower = true;
     }
 
     void Update()
@@ -67,7 +68,11 @@ public class PlayerMovement : MonoBehaviour
         {
             if (!isGrounded && !secondJumpUsed)
             {
-                jumpForce = normalJumpForce / 2;
+                if (doubleJumpPower)
+                    jumpForce = -normalJumpForce;
+                else
+                    jumpForce = normalJumpForce / 2;
+
                 jump = true;
                 secondJumpUsed = true;
             }
@@ -139,7 +144,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 GameEventSystem.Instance.DoubleSpeedGrounded();
             }
-            
         }
     }
 
