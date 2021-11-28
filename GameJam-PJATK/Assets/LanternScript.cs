@@ -27,7 +27,7 @@ public class LanternScript : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            //GameEventSystem.Instance.CheckpointReached();  //KULA DAJE NULLA
+            GameEventSystem.Instance.CheckpointReached();  //KULA DAJE NULLA
 
             this.toggle = true;
 
