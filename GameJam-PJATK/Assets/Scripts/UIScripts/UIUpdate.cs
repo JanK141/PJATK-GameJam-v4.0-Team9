@@ -15,38 +15,47 @@ public class UIUpdate : MonoBehaviour
 
     void Start()
     {
+        HP1.SetActive(false);
+        HP2.SetActive(false);
+        HP3.SetActive(false);
+        HP4.SetActive(false);
+        HP5.SetActive(false);
+
         GameEventSystem.Instance.OnPlayerGetDamage += HPUpdate;
         GameEventSystem.Instance.OnNewGame += NewHP;
 
         GameEventSystem.Instance.OnPlayerDead += GameOver;
         GameEventSystem.Instance.OnGameWon += GameWon;
+
+        GameEventSystem.Instance.NewGame();
     }
 
-    void NewHP(GameData data)
+    void NewHP()
     {
-        if (HP1==null)
+        int x = PlayerPrefs.GetInt("HP");
+        if (x>0)
         {
-            Instantiate(HP1);
+            HP1.SetActive(true);
         }
 
-        if (HP2==null && data.playerHP>1)
+        if (x>1)
         {
-            Instantiate(HP2);
+            HP2.SetActive(true);
         }
 
-        if (HP2 == null && data.playerHP > 2)
+        if (x>2)
         {
-            Instantiate(HP3);
+            HP3.SetActive(true);
         }
 
-        if (HP2 == null && data.playerHP > 3)
+        if (x>3)
         {
-            Instantiate(HP4);
+            HP4.SetActive(true);
         }
 
-        if (HP2 == null && data.playerHP > 4)
+        if (x>4)
         {
-            Instantiate(HP5);
+            HP5.SetActive(true);
         }
     }
 

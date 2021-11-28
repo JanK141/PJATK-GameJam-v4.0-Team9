@@ -18,11 +18,13 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         gameObject.SetActive(false);
+        PlayerPrefs.SetInt("HP", 5);
+
     }
 
     public void DifficultySelected(Dropdown diff)
     {
-        if(diff.value == 0)
+        if (diff.value == 0)
         {
             PlayerPrefs.SetInt("HP", 5);
             //GameEventSystem.Instance.SetHP(5);
@@ -42,8 +44,9 @@ public class MainMenu : MonoBehaviour
 
     public void PlayTheGame()
     {
+        
         SceneManager.LoadScene("FajnyLevel");
-        GameEventSystem.Instance.NewGame(data);
+        
     }
 
     public void GoToInstructions()
