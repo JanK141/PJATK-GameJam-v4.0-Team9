@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     float laneWidth = 1f;
     int currentLane = 0;
 
+
     void Awake()
     {
         collider = GetComponent<Collider>();
@@ -28,6 +29,9 @@ public class PlayerMovement : MonoBehaviour
         anim = transform.GetChild(0).GetComponent<Animator>();
         normalJumpForce = jumpForce;
         startingZposition = transform.position.z;
+
+        GameEventSystem.Instance.OnDoubleSpeedGrounded += GetDoubleSpeed;
+        GameEventSystem.Instance.OnDoubleSpeedAirborne += GetNominalSpeed;
     }
 
     void Update()
@@ -108,6 +112,8 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = true;
             secondJumpUsed = false;
             anim.SetBool("Grounded", true);
+
+            GameEventSystem.Instance.DoubleSpeedGrounded();
         }
     }
 
@@ -117,6 +123,18 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = false;
             anim.SetBool("Grounded", false);
+
+            GameEventSystem.Instance.DoubleSpeedAirborne();
         }
+    }
+
+    public void GetDoubleSpeed(GameData data)
+    {
+        movementSpeed = 2*data.playerSpeed;
+    }
+
+    public void GetNominalSpeed(GameData data)
+    {
+        movementSpeed = data.playerSpeed;
     }
 }
