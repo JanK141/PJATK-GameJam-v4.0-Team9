@@ -44,9 +44,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayTheGame()
     {
-        
         SceneManager.LoadScene("Level1");
-        
     }
 
     public void GoToInstructions()
