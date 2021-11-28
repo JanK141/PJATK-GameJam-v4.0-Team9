@@ -7,26 +7,66 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     float movementSpeed, jumpForce;
-    Rigidbody rb;
 
-    void Start()
+    Rigidbody rb;
+    float movement = 0f;
+    bool isGrounded = true;
+    bool jump = false;
+    bool secondJumpUsed = false;
+    float normalJumpForce;
+
+    void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        normalJumpForce = jumpForce;
+    }
+
+    void Update()
+    {
+        float x = Input.GetAxis("Horizontal");
+        float y = Input.GetAxis("Vertical");
+        movement = x * movementSpeed;
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            if (!isGrounded && !secondJumpUsed)
+            {
+                jumpForce = normalJumpForce / 2;
+                jump = true;
+                secondJumpUsed = true;
+            }
+
+            if (isGrounded)
+            {
+                jumpForce = normalJumpForce;
+                jump = true;
+            }
+        }
     }
 
     void FixedUpdate()
     {
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
+        rb.velocity = new Vector3(movement, rb.velocity.y);
 
-        if (x != 0)
+        if (jump)
         {
-            rb.velocity = new Vector3(x * movementSpeed, rb.velocity.y);
+            Jump();
+            jump = false;
         }
+    }
 
-        if (Input.GetButtonDown("Jump"))
+    void Jump()
+    {
+        rb.AddForce(jumpForce * Vector3.up, ForceMode.Impulse);
+        isGrounded = false;
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
         {
-            rb.AddForce(jumpForce * Vector3.up);
+            isGrounded = true;
+            secondJumpUsed = false;
         }
     }
 }
