@@ -59,6 +59,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        //bool isgr = Physics.Raycast(transform.position, -Vector3.up, collider.bounds.extents.y + 0.1f);
+        //Debug.Log(isgr);
         anim.SetFloat("velocity", rb.velocity.magnitude);
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
@@ -91,6 +93,8 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        isGrounded = Physics.Raycast(transform.position, -Vector3.up, collider.bounds.extents.y + 0.1f);
+        anim.SetBool("Grounded", isGrounded);
         rb.velocity = new Vector3(movement, rb.velocity.y, 0);
 
         if (jump)
@@ -136,9 +140,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            isGrounded = true;
+            //isGrounded = true;
             secondJumpUsed = false;
-            anim.SetBool("Grounded", true);
+            //anim.SetBool("Grounded", true);
 
             if (doubleSpeedPower)
             {
@@ -151,8 +155,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            isGrounded = false;
-            anim.SetBool("Grounded", false);
+            //isGrounded = false;
+            //anim.SetBool("Grounded", false);
 
             if (doubleSpeedPower)
             {
