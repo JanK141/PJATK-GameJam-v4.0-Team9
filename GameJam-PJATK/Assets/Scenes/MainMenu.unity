@@ -386,7 +386,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 384287752}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -426,7 +426,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SSTNTBD* - Some Stuff That Needed To Be Done (TM)
+  m_Text: '*SSTNTBD - Some Stuff That Needed To Be Done (TM)'
 --- !u!222 &26334644
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -742,14 +742,14 @@ RectTransform:
   m_GameObject: {fileID: 136703283}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.87718844, y: 0.87718844, z: 0.87718844}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 384287752}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -43.85962}
+  m_AnchoredPosition: {x: 0, y: -20}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &136703285
@@ -774,10 +774,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 5
+    m_MinSize: 0
     m_MaxSize: 50
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -968,6 +968,7 @@ RectTransform:
   - {fileID: 900276239}
   - {fileID: 136703284}
   - {fileID: 1608619818}
+  - {fileID: 1968386806}
   - {fileID: 1443056396}
   - {fileID: 26334642}
   m_Father: {fileID: 0}
@@ -1820,7 +1821,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 450982738}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.9900051
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3223,7 +3224,7 @@ RectTransform:
   m_Children:
   - {fileID: 1293877319}
   m_Father: {fileID: 384287752}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3723,7 +3724,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 50}
   m_SizeDelta: {x: 500, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1608619819
@@ -3758,13 +3759,10 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
-    m_LineSpacing: 1.4
+    m_LineSpacing: 1.2
   m_Text: "Jan Krajewski - concepts, physics, SSTNTBD*\nMarcin Wr\xF3blewski - concepts,
     UI, SSTNTBD*\nBart\u0142omiej Kawa - concepts, physics, SSTNTBD*\nJakub Wilczak
-    - concepts, graphics, SSTNTBD*\nJakub Gawry\u015B - concepts, tech artist, SSTNTBD*\n\nMusic
-    by Kevin MacLeod (incompetech.com)\r\nLicensed under Creative Commons: By Attribution
-    4.0 License\r\nhttp://creativecommons.org/licenses/by/4.0/\n- \"Beauty Flow\"
-    (menu)\n- \"Delightful D\" (gameplay)\n"
+    - concepts, graphics, SSTNTBD*\nJakub Gawry\u015B - concepts, tech artist, SSTNTBD*\n"
 --- !u!222 &1608619820
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3886,8 +3884,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -28.518}
-  m_SizeDelta: {x: 600, y: 352.964}
+  m_AnchoredPosition: {x: 0, y: -5}
+  m_SizeDelta: {x: 600, y: 340}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1686160526
 MonoBehaviour:
@@ -3984,14 +3982,14 @@ RectTransform:
   m_GameObject: {fileID: 1795533743}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.877197, y: 0.877197, z: 0.877197}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1857989622}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -43.85962}
+  m_AnchoredPosition: {x: 0, y: -20}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1795533745
@@ -4016,10 +4014,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 5
+    m_MinSize: 4
     m_MaxSize: 50
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -4697,7 +4695,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.00079345703, y: -0.000026102462}
+  m_AnchoredPosition: {x: 0.000091552734, y: -0.000026102462}
   m_SizeDelta: {x: 583.582, y: 581.257}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1947920734
@@ -4887,6 +4885,96 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950417927}
   m_CullTransparentMesh: 1
+--- !u!1 &1968386805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1968386806}
+  - component: {fileID: 1968386808}
+  - component: {fileID: 1968386807}
+  m_Layer: 5
+  m_Name: Music info
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1968386806
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968386805}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 384287752}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -110}
+  m_SizeDelta: {x: 500, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1968386807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968386805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 20
+    m_FontStyle: 2
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 'Music by Kevin MacLeod (incompetech.com)
+
+    Licensed under Creative
+    Commons: By Attribution 4.0 License
+
+    http://creativecommons.org/licenses/by/4.0/
+
+
+    "Beauty
+    Flow" (menu)
+
+    "Delightful D" (gameplay)'
+--- !u!222 &1968386808
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968386805}
+  m_CullTransparentMesh: 1
 --- !u!1 &1981540777
 GameObject:
   m_ObjectHideFlags: 0
@@ -4970,7 +5058,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1523258207}
   m_Direction: 2
   m_Value: 1.0000004
-  m_Size: 0.6422174
+  m_Size: 0.6174359
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
