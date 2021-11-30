@@ -95,8 +95,18 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        isGrounded = Physics.Raycast(transform.position, -Vector3.up, collider.bounds.extents.y + 0.1f, ~ignoreMe);
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, collider.bounds.extents.y + 0.1f, ~ignoreMe);
         anim.SetBool("Grounded", isGrounded);
+        if (isGrounded)
+        {
+            secondJumpUsed = false;
+
+            if (doubleSpeedPower)
+                GameEventSystem.Instance.DoubleSpeedGrounded();
+        }
+        else if (doubleSpeedPower)
+            GameEventSystem.Instance.DoubleSpeedAirborne();
+
         rb.velocity = new Vector3(movement, rb.velocity.y, 0);
 
         if (jump)
@@ -141,6 +151,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        /*
         if (collision.gameObject.CompareTag("Ground"))
         {
             //isGrounded = true;
@@ -152,10 +163,12 @@ public class PlayerMovement : MonoBehaviour
                 GameEventSystem.Instance.DoubleSpeedGrounded();
             }
         }
+        */
     }
 
     void OnCollisionExit(Collision collision)
     {
+        /*
         if (collision.gameObject.CompareTag("Ground"))
         {
             //isGrounded = false;
@@ -166,6 +179,7 @@ public class PlayerMovement : MonoBehaviour
                 GameEventSystem.Instance.DoubleSpeedAirborne();
             }
         }
+        */
     }
 
     public void GetDoubleSpeed(GameData data)
