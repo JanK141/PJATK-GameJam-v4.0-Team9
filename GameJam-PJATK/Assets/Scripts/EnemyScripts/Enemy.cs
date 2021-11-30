@@ -28,13 +28,6 @@ public class Enemy : MonoBehaviour
         rb.freezeRotation = true;
     }
 
-    void Update()
-    {
-        anim.SetFloat("velocity", rb.velocity.magnitude);
-        anim.SetBool("Grounded", IsGrounded());
-    }
-
-
     public bool IsGrounded()
     {
         return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.05f);
