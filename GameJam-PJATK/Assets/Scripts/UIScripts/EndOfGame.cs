@@ -14,6 +14,8 @@ public class EndOfGame : MonoBehaviour
     {
         gameObject.SetActive(false);
         SceneManager.LoadScene("MainMenu");
+        var audioPlayer = FindObjectOfType<AudioPlayer>().gameObject;
+        Destroy(audioPlayer);
     }
 
     public void ExitGame()
